@@ -1,13 +1,14 @@
-FC=gcc -c
+CC=gcc -c
 LD=gcc
-SRC=main.c fact.c hermite.c
-OBJ=main.o fact.o hermite.o
+SRC=fact.c legendre.c main.c
+OBJ=fact.o legendre.o main.o
+SRC1=fact.c legendre.c
+OBJ1=fact.o legendre.o
 
-hermite:
-	$(FC) $(SRC)
-	$(LD) $(OBJ) -o hermite.x -lm
+legendre:
+	$(CC) $(SRC)
+	$(LD) $(OBJ) -o legendre.x -lm
 	rm -rf *.o
 clean:
-	rm -rf hermite.x
-	rm -rf *.o
+	rm -rf *.o legendre.x
 
